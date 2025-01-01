@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { use } from "react";
 
 const fadeInUp = {
   initial: { y: 60, opacity: 0 },
@@ -27,8 +29,14 @@ const hoverEffect = {
   },
 };
 
-export default function BlogPage() {
+export default function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const t = useTranslations("BlogPage");
+  const router = useRouter();
+  const { locale } = use(params);
 
   const blogs = Array.from({ length: 2 }, (_, i) => ({
     title: t(`blogs.${i}.title`),
@@ -36,6 +44,7 @@ export default function BlogPage() {
     description: t(`blogs.${i}.concise`),
     image: t(`blogs.${i}.image`),
     tags: t(`blogs.${i}.tags`).split(","),
+    slug: `blog-${i + 1}`,
   }));
 
   return (
@@ -61,7 +70,10 @@ export default function BlogPage() {
               whileHover={hoverEffect}
               className="group"
             >
-              <Card className="flex flex-col sm:flex-row w-full lg:w-4/5 items-stretch gap-6 rounded-2xl sm:shadow-[0_0px_1.2px_rgb(140,140,140)] shadow-[0_0px_2px_rgb(140,140,140)] hover:shadow-[0_0px_2px_rgb(140,140,140)] p-3 opacity-90 hover:opacity-100 bg-muted hover:bg-[#0A0C0C]">
+              <Card
+                className="flex flex-col sm:flex-row w-full lg:w-4/5 items-stretch gap-6 rounded-2xl sm:shadow-[0_0px_1.2px_rgb(140,140,140)] shadow-[0_0px_2px_rgb(140,140,140)] hover:shadow-[0_0px_2px_rgb(140,140,140)] p-3 opacity-90 hover:opacity-100 bg-[#fafafa] dark:bg-[#1a1a1a] hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a] cursor-pointer transition-colors"
+                onClick={() => router.push(`/${locale}/blog/${blog.slug}`)}
+              >
                 <div className="relative aspect-[48/27] w-full sm:w-80 rounded-2xl shrink-0">
                   <img
                     src={blog.image}
@@ -70,7 +82,7 @@ export default function BlogPage() {
                   />
                 </div>
 
-                <div className="flex flex-col justify-between flex-grow p-4 gap-2 max-h-48 overflow-y-scroll">
+                <div className="flex flex-col justify-between flex-grow p-4 gap-2 max-h-48 overflow-y-auto">
                   <h2 className="text-2xl font-bold">{blog.title}</h2>
                   <p className="text-sm text-gray-500">{blog.time}</p>
                   <p className="text-muted-foreground">{blog.description}</p>

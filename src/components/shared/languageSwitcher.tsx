@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import { useState } from "react";
+import { Languages } from "lucide-react";
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
@@ -10,9 +11,10 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const [isChanging, setIsChanging] = useState(false);
 
-  const switchLocale = async (newLocale: string) => {
+  const switchLocale = async () => {
     try {
       setIsChanging(true);
+      const newLocale = locale === "en" ? "zh" : "en";
       const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
       await router.push(newPath);
     } catch (error) {
@@ -23,29 +25,18 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex gap-2">
-      <button
-        onClick={() => switchLocale("en")}
-        disabled={isChanging || locale === "en"}
-        className={`px-2 py-1 rounded transition-all duration-200 ${
-          locale === "en"
-            ? "bg-blue-500 text-white"
-            : "bg-gray-200 hover:bg-gray-300"
-        } ${isChanging ? "opacity-50 cursor-not-allowed" : ""}`}
-      >
-        EN
-      </button>
-      <button
-        onClick={() => switchLocale("zh")}
-        disabled={isChanging || locale === "zh"}
-        className={`px-2 py-1 rounded transition-all duration-200 ${
-          locale === "zh"
-            ? "bg-blue-500 text-white"
-            : "bg-gray-200 hover:bg-gray-300"
-        } ${isChanging ? "opacity-50 cursor-not-allowed" : ""}`}
-      >
-        中文
-      </button>
-    </div>
+    <button
+      onClick={switchLocale}
+      disabled={isChanging}
+      className={`rounded-md p-2 hover:bg-accent hover:text-accent-foreground transition-colors ${
+        isChanging ? "opacity-50 cursor-not-allowed" : ""
+      }`}
+      title={locale === "en" ? "切换到中文" : "Switch to English"}
+    >
+      <Languages className="h-[1.2rem] w-[1.2rem]" />
+      <span className="sr-only">
+        {locale === "en" ? "切换到中文" : "Switch to English"}
+      </span>
+    </button>
   );
 }
