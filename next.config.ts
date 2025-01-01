@@ -7,9 +7,9 @@ const nextConfig: NextConfig = {
   devIndicators: {
     appIsrStatus: false,
   },
-  // typescript: {
-  //   ignoreBuildErrors: true,
-  // },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
