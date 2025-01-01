@@ -5,10 +5,12 @@ import { motion } from "motion/react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import { socialLinks } from "@/config/site";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("HomePage");
   const [text] = useTypewriter({
-    words: ["Keqing", "Developer", "Nerd"],
+    words: t.raw("words"),
     loop: true,
     delaySpeed: 2000,
   });
@@ -22,14 +24,13 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="flex-1"
         >
-          <h1 className="text-4xl font-bold mb-4">Hi, there 👋</h1>
+          <h1 className="text-4xl font-bold mb-4">{t("title")}</h1>
           <p className="text-xl mb-4">
-            I'm <span className="font-semibold">{text}</span>
+            {t("intro")} <span className="font-semibold">{text}</span>
             <Cursor cursorStyle="|" />
           </p>
           <p className="text-gray-600 dark:text-gray-300 max-w-lg">
-            A normal guy living in Guangzhou, focus on Web development.
-            Passionate about developing applications and learning new things.
+            {t("hero")}
           </p>
         </motion.div>
 

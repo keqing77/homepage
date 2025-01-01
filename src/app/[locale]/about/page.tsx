@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+// import { getTranslations } from "next-intl/server";
 
 const skills = [
   "React",
@@ -33,6 +34,8 @@ const staggerContainer = {
 };
 
 export default function AboutPage() {
+  // export default async function AboutPage() {
+  // const t = await getTranslations("AboutPage");
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl">
       <motion.div

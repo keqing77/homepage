@@ -1,7 +1,3 @@
-"use client";
-
-import { useTypewriter } from "react-simple-typewriter";
-
 import Hero from "@/components/sections/hero";
 
 export default function Home() {

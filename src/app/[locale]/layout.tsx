@@ -1,10 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
 import "@/app/globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/layout/Header";
 
@@ -25,15 +22,12 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // Ensure that the incoming `locale` is valid
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  if (!routing.locales.includes(locale as any)) {
+  let messages;
+  try {
+    messages = (await import(`@/locales/${locale}.json`)).default;
+  } catch (error) {
     notFound();
   }
-
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>

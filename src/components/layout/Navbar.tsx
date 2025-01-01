@@ -5,16 +5,19 @@ import { usePathname } from "next/navigation";
 import type { NavItem } from "@/types";
 import { motion } from "motion/react";
 import { useLocale } from "next-intl";
-const navItems: NavItem[] = [
-  { name: "Home", path: "/" },
-  { name: "Blog", path: "/blog" },
-  { name: "Project", path: "/project" },
-  { name: "About", path: "/about" },
-];
+import { useTranslations } from "next-intl";
 
 export default function Navbar() {
   const pathname = usePathname();
   const locale = useLocale();
+  const t = useTranslations("Navigation");
+
+  const navItems: NavItem[] = [
+    { name: t("home"), path: "/" },
+    { name: t("blog"), path: "/blog" },
+    { name: t("project"), path: "/project" },
+    { name: t("about"), path: "/about" },
+  ];
 
   return (
     <div className="justify-center hidden col-span-2 mt-0.5 sm:flex h-14">

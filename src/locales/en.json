@@ -1,6 +1,83 @@
 {
+  "Navigation": {
+    "home": "Home",
+    "blog": "Blog",
+    "project": "Project",
+    "about": "About"
+  },
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "name": "Keqing",
+    "title": "Hi, there 👋",
+    "intro": "I'm ",
+    "words": ["Keqing", "Developer", "Nerd"],
+    "hero": "A nobody programmer who tries to be a front-end master, but found that I can't write code better than AI, accidentally cross to the Teyvat and found a secret recipe for beef noodles, trying to sell it to make a living."
+  },
+  "BlogPage": {
+    "title": "Blogs",
+    "blogs":[
+      {
+        "title": "Blog 1",
+        "time": "2024-01-01",
+        "tags": "React,Next.js",
+        "concise": "a blogs for placeholder",
+        "image": "/images/nextjs.png"
+      },
+      {
+        "title": "Blog 2",
+        "time": "2024-01-01",
+        "tags": "React,Node.js,Docker",
+        "concise": "loream ipsum",
+        "image": "/images/nextjs.png"
+      }
+    ]
+  },
+  "ProjectPage": {
+    "title": "My Projects",
+    "projects":[
+      {
+        "title": "My Bento Page",
+        "description": "Keqing's Bento Page",
+        "image": "/images/nextjs.png",
+        "tags": ["React", "Next.js", "Bento"],
+        "link": "https://bento.me/keqing"
+      },
+      {
+        "title": "My Home Page",
+        "description": "A toy home page",
+        "image": "/images/nextjs.png",
+        "tags": ["React", "Next.js", "HomePage"],
+        "link": "https://keqingblog.netlify.app/"
+      },
+      {
+        "title": "My Blog",
+        "description": "A blog build with Docusaurus",
+        "image": "/images/nextjs.png",
+        "tags": ["React", "Next.js", "Docusaurus", "Blog"],
+        "link": "https://keqingblog.netlify.app/"
+      }
+    ]
+  },
+  "AboutPage": {
+    "avatar": "/images/avatar.png",
+    "name": "Keqing",
+    "title": "Software Engineer",
+    "aboutMe": "I'm a software engineer who loves to build things.",
+    "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Toy"],
+    "contact": "Contact Me",
+    "experience": [
+      {
+        "company": "Company 1",
+        "period": "2022-2024",
+        "title": "Software Engineer",
+        "description": "Undergraduate student at University of California, San Diego"
+      },
+      {
+        "company": "Company 2",
+        "period": "2024-now",
+        "title": "Full Stack Developer",
+        "description": "LLM Engineer at Company 2"
+      }
+    ]
   }
+
 }

@@ -4,19 +4,6 @@ import { motion } from "motion/react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
-
-const skills = [
-  "React",
-  "TypeScript",
-  "Next.js",
-  "Node.js",
-  "Tailwind CSS",
-  "GraphQL",
-  "PostgreSQL",
-  "Docker",
-  "AWS",
-];
 
 const fadeInUp = {
   initial: { y: 60, opacity: 0 },
@@ -34,20 +21,26 @@ const staggerContainer = {
 
 const projects = [
   {
-    title: "project1",
-    description: "develop base on Next.js",
+    title: "My Home Page",
+    description: "Simple Home Page",
     image: "/images/nextjs.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
-    link: "https://your-blog-url.com",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Toy"],
+    link: "https://keqing.zeabur.app/",
   },
   {
-    title: "project2",
-    description: "Full stack e-commerce solution",
+    title: "My Bento Page",
+    description: "Keqing's Bento Page",
     image: "/images/nextjs.png",
-    tags: ["React", "Node.js", "PostgreSQL", "Docker"],
-    link: "https://your-ecommerce-url.com",
+    tags: ["React", "Next.js", "Bento"],
+    link: "https://bento.me/keqing",
   },
-  // ... 可以添加更多项目
+  {
+    title: "My Blog",
+    description: "A blog build with Docusaurus",
+    image: "/images/nextjs.png",
+    tags: ["React", "Next.js", "Docusaurus", "Blog"],
+    link: "https://keqingblog.netlify.app/",
+  },
 ];
 
 export default function BlogPage() {
@@ -59,8 +52,7 @@ export default function BlogPage() {
         transition={{ duration: 0.5 }}
         className="space-y-8"
       >
-        <h1 className="text-4xl font-bold text-center mb-12">我的项目</h1>
-
+        <h1 className="text-4xl font-bold text-center mb-12">Websites</h1>
         <motion.div
           variants={staggerContainer}
           initial="initial"

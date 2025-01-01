@@ -11,7 +11,7 @@ export const socialLinks: SocialLink[] = [
   { 
     name: "twitter",
     label: "Twitter", 
-    link: "https://linkedin.com/", 
+    link: "https://x.com/", 
     icon: Icons.twitter 
   },
   { 

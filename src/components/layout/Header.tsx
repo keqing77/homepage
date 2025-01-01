@@ -1,23 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Icons } from "@/components/shared/Icons";
 import Navbar from "@/components/layout/Navbar";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 import { ModeToggle } from "../shared/mode-toggle";
-export default function Header() {
-  const pathname = usePathname();
-  const page = pathname.split("/").slice(0, 2).join("/");
+import LanguageSwitcher from "../shared/languageSwitcher";
 
+export default function Header() {
   return (
     <header className="grid w-full grid-flow-col grid-cols-3 sm:grid-cols-4 items-center">
       <div className="flex items-center">
-        <Avatar>
-          <AvatarImage src="/images/avatar.png" />
-          <AvatarFallback>KE</AvatarFallback>
-        </Avatar>
+        <LanguageSwitcher />
       </div>
 
       <Navbar />
