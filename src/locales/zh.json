@@ -32,50 +32,53 @@
     ]
   },
   "ProjectPage": {
-    "title": "My Projects",
+    "title": "我的项目",
     "projects":[
       {
-        "title": "My Bento Page",
-        "description": "Keqing's Bento Page",
+        "title": "我的便当盒主页",
+        "description": "刻刻的便当盒",
         "image": "/images/nextjs.png",
-        "tags": "React,Next.js,Bento",
+        "tags": ["React", "Next.js", "Bento"],
         "link": "https://bento.me/keqing"
       },
       {
-        "title": "My Home Page",
-        "description": "A toy home page",
+        "title": "个人主页",
+        "description": "一个玩具个人主页",
         "image": "/images/nextjs.png",
         "tags": ["React", "Next.js", "HomePage"],
         "link": "https://keqingblog.netlify.app/"
       },
       {
-        "title": "My Blog",
-        "description": "A blog build with Docusaurus",
+        "title": "个人博客",
+        "description": "使用 Docusaurus 搭建的博客",
         "image": "/images/nextjs.png",
         "tags": ["React", "Next.js", "Docusaurus", "Blog"],
         "link": "https://keqingblog.netlify.app/"
       }
-    ]
+    ],
+    "checkItOut": "查看项目"
   },
   "AboutPage": {
     "avatar": "/images/avatar.png",
-    "name": "Keqing",
-    "title": "Software Engineer",
-    "aboutMe": "I'm a software engineer who loves to build things.",
-    "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Toy"],
-    "contact": "Contact Me",
+    "name": "写前端的刻猫猫",
+    "title": "软件工程师",
+    "aboutMe": "我是一个喜欢构建事物的软件工程师。",
+    "skillSet": "技能",
+    "skills": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "FastAPI", "Hono.js", "PostgreSQL", "Docker"],
+    "contact": "联系我",
+    "workExperience": "工作经历",
     "experience": [
       {
-        "company": "Company 1",
+        "company": "公司A",
         "period": "2022-2024",
-        "title": "Software Engineer",
-        "description": "Undergraduate student at University of California, San Diego"
+        "title": "软件工程师",
+        "description": "牛马程序员"
       },
       {
-        "company": "Company 2",
+        "company": "公司B",
         "period": "2024-now",
-        "title": "Full Stack Developer",
-        "description": "LLM Engineer at Company 2"
+        "title": "全栈工程师",
+        "description": "核动力牛马程序员"
       }
     ]
   }

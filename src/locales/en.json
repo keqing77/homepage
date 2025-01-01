@@ -55,27 +55,30 @@
         "tags": ["React", "Next.js", "Docusaurus", "Blog"],
         "link": "https://keqingblog.netlify.app/"
       }
-    ]
+    ],
+    "checkItOut": "Check it out"
   },
   "AboutPage": {
     "avatar": "/images/avatar.png",
     "name": "Keqing",
     "title": "Software Engineer",
     "aboutMe": "I'm a software engineer who loves to build things.",
-    "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Toy"],
+    "skillSet": "Skill Set",
+    "skills": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "FastAPI", "Hono.js", "PostgreSQL", "Docker"],
     "contact": "Contact Me",
+    "workExperience": "Work Experience",
     "experience": [
       {
-        "company": "Company 1",
+        "company": "Company A",
         "period": "2022-2024",
         "title": "Software Engineer",
-        "description": "Undergraduate student at University of California, San Diego"
+        "description": "Built and maintained a identity platform powered by auth0, served 40+ millions users"
       },
       {
-        "company": "Company 2",
+        "company": "Company B",
         "period": "2024-now",
         "title": "Full Stack Developer",
-        "description": "LLM Engineer at Company 2"
+        "description": "Generative AI Applications develop, data-analysis, data-visualization, file summary and comparision etc that can be used in daily life"
       }
     ]
   }
