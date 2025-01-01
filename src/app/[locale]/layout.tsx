@@ -1,6 +1,5 @@
 import "@/app/globals.css";
-import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/layout/Header";
@@ -29,6 +28,7 @@ export default async function RootLayout({
     console.error(`Failed to load messages for locale ${locale}:`, error);
     messages = (await import(`@/locales/en.json`)).default;
   }
+  // const messages = useMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>

@@ -120,8 +120,14 @@ export default function AboutPage() {
             <div className="space-y-6">
               {t.raw("experience").map((exp: any, index: number) => (
                 <div key={index} className="border-l-2 border-primary/20 pl-4">
-                  <h3 className="font-semibold">{exp.title}</h3>
-                  <p className="text-sm text-muted-foreground">{exp.period}</p>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-lg font-bold">{exp.company}</h3>
+                    <span className="text-sm text-muted-foreground">
+                      {exp.period}
+                    </span>
+                  </div>
+                  <span>{exp.title}</span>
+
                   <p className="mt-2">{exp.description}</p>
                 </div>
               ))}
