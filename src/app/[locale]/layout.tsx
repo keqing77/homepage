@@ -1,6 +1,6 @@
+import "@/app/globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-import "@/app/globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/layout/Header";
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: {
@@ -26,7 +26,8 @@ export default async function LocaleLayout({
   try {
     messages = (await import(`@/locales/${locale}.json`)).default;
   } catch (error) {
-    notFound();
+    console.error(`Failed to load messages for locale ${locale}:`, error);
+    messages = (await import(`@/locales/en.json`)).default;
   }
 
   return (
@@ -35,7 +36,7 @@ export default async function LocaleLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="flex flex-col items-center px-4 pt-10 mx-auto max-w-4xl lg:max-w-5xl sm:px-12 md:px-20 lg:px-12 xl:max-w-7xl min-h-svh">
               <Header />
