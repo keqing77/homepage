@@ -1,4 +1,6 @@
-export default function RedisIcon(props) {
+import { LucideProps } from "lucide-react";
+
+export default function RedisIcon(props: LucideProps) {
   return (
     <svg
       height="220"

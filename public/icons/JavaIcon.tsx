@@ -1,4 +1,6 @@
-export default function JavaIcon(props) {
+import { LucideProps } from "lucide-react";
+
+export default function JavaIcon(props: LucideProps) {
   return (
     <svg
       height="346"

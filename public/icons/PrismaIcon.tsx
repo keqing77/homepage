@@ -1,4 +1,6 @@
-export default function PrismaIcon(props) {
+import { LucideProps } from "lucide-react";
+
+export default function PrismaIcon(props: LucideProps) {
   return (
     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path

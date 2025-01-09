@@ -1,4 +1,6 @@
-export default function NextIcon(props) {
+import { LucideProps } from "lucide-react";
+
+export default function NextIcon(props: LucideProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

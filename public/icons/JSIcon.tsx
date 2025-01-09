@@ -1,4 +1,6 @@
-export default function JSIcon(props) {
+import { LucideProps } from "lucide-react";
+
+export default function JSIcon(props: LucideProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

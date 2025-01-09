@@ -1,4 +1,6 @@
-export default function MongoIcon(props) {
+import { LucideProps } from "lucide-react";
+
+export default function MongoIcon(props: LucideProps) {
   return (
     <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g clipRule="evenodd" fillRule="evenodd">

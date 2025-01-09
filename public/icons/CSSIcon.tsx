@@ -1,4 +1,6 @@
-export default function CSSIcon(props) {
+import type { LucideProps } from "lucide-react";
+
+export default function CSSIcon(props: LucideProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

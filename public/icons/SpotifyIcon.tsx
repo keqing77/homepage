@@ -1,4 +1,6 @@
-export default function SpotifyIcon(props) {
+import { LucideProps } from "lucide-react";
+
+export default function SpotifyIcon(props: LucideProps) {
   return (
     <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g>
